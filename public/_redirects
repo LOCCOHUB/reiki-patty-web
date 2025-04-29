@@ -1,0 +1,9 @@
+/servicios/       /#servicios        301
+/contacta/        /#contacto         301
+/quienessomos/    /#historia         301
+/galeria/         /#inicio           301
+/blog/*           /#inicio           301
+/portfolio-index-standard/nuestros-packs/  /#servicios  301
+/project/ambientes/   /#inicio       301
+/project/bodas/       /#inicio       301
+/*    /index.html   200

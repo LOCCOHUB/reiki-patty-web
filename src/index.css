@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('/fonts/PPNeueMontreal-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'PP Neue Montreal', sans-serif;
+  background-color: #fbfbfb;
+  color: #202019;
+}
+
+:root {
+  --background: 0 0% 98.4%; /* #fbfbfb */
+  --foreground: 60 0.3% 10%; /* #202019 */
+  --border: 210 6.5% 63.7%; /* #9ba1a8 */
+  --primary: 27 36.4% 40.4%; /* #8b6442 */
+  --secondary: 44 25.8% 48.2%; /* #98885f */
+  --accent: 205 14.4% 53.1%; /* #738c9c */
+  --muted: 21 21.4% 68.8%; /* #c3af9c */
+  --light-gray: 0 0.8% 79.8%; /* #cac9ca */
+  --beige: 35 24.6% 74.1%; /* #ccc0ac */
+  --radius: 0rem;
+}
+
+/* Utility classes */
+.u-text-h1 {
+  font-size: 5rem;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.u-text-h2 {
+  font-size: 4rem;
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+.u-text-h3 {
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.u-text-h4 {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.u-text-h5 {
+  font-size: 1.5rem;
+  line-height: 1.35;
+  font-weight: 400;
+}
+
+.u-text-small {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.u-text-display {
+  font-size: 7.5rem;
+  line-height: 1;
+  font-weight: 500;
+}
+
+/* Animation Utilities */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(10%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideOutRight {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.4s ease-out forwards;
+}
+
+.animate-slide-out-right {
+  animation: slideOutRight 0.4s ease-out forwards;
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .text-\[180px\] {
+    font-size: 100px;
+  }
+
+  .text-\[120px\] {
+    font-size: 60px;
+  }
+}
+
+/* Fix for headers */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+/* Fix for images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+html, body {
+  overflow-x: hidden;
+}
+html, body {
+  overflow-x: hidden;
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 1.8s infinite;
+}
+html {
+  scroll-behavior: smooth;
+}

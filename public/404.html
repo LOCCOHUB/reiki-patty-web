@@ -1,0 +1,49 @@
+<!-- 404.html corregido -->
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 · Angelita & Rita</title>
+  <link rel="icon" href="/favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .btn404 span:last-child{transition:transform .25s;}
+    .btn404:hover span:last-child{transform:translateX(.35rem);}
+  </style>
+</head>
+
+<body class="min-h-screen bg-background text-black">
+  <section class="grid grid-cols-1 md:grid-cols-12 min-h-screen">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div class="md:col-span-7 flex flex-col justify-between px-8 md:px-14 py-10">
+      <div>
+        <p class="max-w-xs md:max-w-sm mb-8 leading-snug">
+          La página que buscas no existe o ha sido movida.<br>
+          Te llevamos al lugar correcto.
+        </p>
+
+        <a href="/#inicio"
+           class="btn404 inline-flex items-center gap-3 bg-black text-white px-6 py-3 rounded-full
+                  uppercase text-xs tracking-wider hover:bg-opacity-90 transition">
+          <span>Volver al inicio</span><span>→</span>
+        </a>
+      </div>
+
+      <h1 class="text-[24vw] md:text-[15vw] font-bold leading-none tracking-tighter">404</h1>
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div class="md:col-span-5 overflow-hidden p-4">
+      <!-- tu foto -->
+      <img
+        src="/images/sections/couple.jpg"
+        alt="Algo salió mal"
+        class="w-full h-full object-cover rounded-lg shadow-xl"
+      />
+    </div>
+  </section>
+</body>
+</html>
