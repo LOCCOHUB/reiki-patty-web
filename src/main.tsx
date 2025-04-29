@@ -1,13 +1,17 @@
 import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App.tsx";
 import "./index.css";
 
-const root = document.getElementById("root");
-if (!root) throw new Error("Failed to find root element");
+const rootElement = document.getElementById("root");
+if (!rootElement) {
+  throw new Error("Failed to find root element");
+}
 
-createRoot(root).render(
+createRoot(rootElement).render(
   <BrowserRouter>
-    <App />
+    <Routes>
+      <Route path="/*" element={<App />} />
+    </Routes>
   </BrowserRouter>
 );

@@ -238,10 +238,10 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
                           className="w-full p-3 bg-gray-800 border-none focus:outline-none focus:ring-1 focus:ring-white"
                         >
                           <option value="">Selecciona un rango</option>
-                          <option value="menos-30k">Menos de 30.000€</option>
-                          <option value="30k-60k">30.000€ - 60.000€</option>
-                          <option value="60k-100k">60.000€ - 100.000€</option>
-                          <option value="mas-100k">Más de 100.000€</option>
+                          <option value="menos-30k">Menos de 1.200€</option>
+                          <option value="30k-60k">1.200€ - 2.000€</option>
+                          <option value="60k-100k">2.000€ - 3.000€</option>
+                          <option value="mas-100k">Más de 3.000€</option>
                         </select>
                       </div>
 

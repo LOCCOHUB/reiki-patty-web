@@ -29,9 +29,9 @@ const OurApproach = () => {
           {/* Foto + lista */}
           <div>
             <img
-              src="/images/sections/proceso-2.png"
+              src="/images/sections/enfoque-03.png"
               alt="Organización de boda íntima"
-              className="w-full h-auto grayscale"
+              className="w-full h-auto object-cover"
             />
 
             <ul className="mt-8 space-y-4">
