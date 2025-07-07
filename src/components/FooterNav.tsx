@@ -8,29 +8,28 @@ const FooterNav = () => {
           {/* Foto cuadrada */}
           <div className="md:col-span-5">
             <img
-              src="/images/sections/footer-nav-01.png"
-              alt="Detalle de boda organizada por Angelita & Rita"
-              className="w-full h-auto aspect-square object-cover"
+              src="/images/sections/diploma-reiki-patty.jpg"
+              alt="Detalle de espacio Öleo Healing"
+              className="w-full h-auto aspect-square object-cover rounded-xl"
             />
           </div>
 
           <div className="md:col-span-7">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-              {/* Claim grande animado */}
+              {/* Claim espiritual animado */}
               <div className="md:col-span-6">
-                <div className="mb-4 text-sm uppercase tracking-wider">(OS ESPERAMOS)</div>
+                <div className="mb-4 text-sm uppercase tracking-wider">(TE ESPERO)</div>
                 <div className="overflow-hidden">
                   <motion.h3
                     initial={{ y: "100%" }}
                     whileInView={{ y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-5xl md:text-6xl font-extrabold leading-tight uppercase"
+                    className="text-4xl md:text-5xl font-extrabold leading-tight"
                   >
-                    Amor&nbsp;que<br />
-                    emociona,<br />
-                    historias&nbsp;<br />
-                    reales.
+                    Un espacio<br />
+                    para sanar<br />
+                    desde dentro.
                   </motion.h3>
                 </div>
               </div>
@@ -41,25 +40,16 @@ const FooterNav = () => {
                   <div className="mb-4 text-sm uppercase tracking-wider">(CONTACTO)</div>
                   <div className="space-y-1 text-sm">
                     <p>
-                      <strong>E:</strong>{" "}
-                      <a
-                        href="mailto:info@angelitayrita.com"
-                        className="hover:opacity-70 transition-opacity"
-                      >
-                        info@angelitayrita.com
-                      </a>
+                      <strong>T:</strong> +1&nbsp;(786)&nbsp;707&nbsp;6843
                     </p>
                     <p>
-                      <strong>T:</strong> +34&nbsp;665&nbsp;377&nbsp;391
-                    </p>
-                    <p>
-                      <strong>H:</strong> L-V&nbsp;·&nbsp;10:00 – 17:00
+                      <strong>H:</strong> Consulta disponibilidad en el calendario
                     </p>
                   </div>
                 </div>
 
                 <p className="text-xs text-gray-500">
-                  Trabajamos en toda España y destinos internacionales.
+                  Sesiones presenciales en Miami · Terapias online disponibles en todo el mundo.
                 </p>
               </div>
             </div>

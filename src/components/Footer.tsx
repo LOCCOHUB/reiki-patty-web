@@ -1,17 +1,17 @@
-import { Link } from "react-router-dom"; // <-- Esto lo añadimos arriba
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="py-8 px-8 md:px-12 lg:px-20 bg-white text-black">
+    <footer className="py-8 px-8 md:px-12 lg:px-20 bg-background text-black border-t border-gray-200">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {/* Copyright */}
           <div className="md:col-span-6 flex items-center">
             <div>
-              <p className="text-xs text-gray-600">© {year} Angelita &amp; Rita</p>
-              <p className="text-xs text-gray-600">Madrid · Worldwide</p>
+              <p className="text-xs text-gray-600">© {year} Öleo Healing Therapy</p>
+              <p className="text-xs text-gray-600">Miami · Online · Presencial</p>
             </div>
           </div>
 
@@ -28,7 +28,7 @@ const Footer = () => {
           {/* Instagram */}
           <div className="md:col-span-2">
             <a
-              href="https://www.instagram.com/angelitayrita/"
+              href="https://www.instagram.com/reikipatty/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs uppercase tracking-wider text-gray-600 hover:text-black"
@@ -50,15 +50,6 @@ const Footer = () => {
                 Locco Committee®
               </a>
             </p>
-          </div>
-        </div>
-
-        {/* Logo grande AR */}
-        <div className="mt-16 md:mt-32">
-          <div className="font-bold leading-none flex items-baseline space-x-1 tracking-tighter">
-            <span className="text-[200px] md:text-[240px]">A</span>
-            <span className="text-[90px] md:text-[80px]">&amp;</span>
-            <span className="text-[200px] md:text-[240px]">R</span>
           </div>
         </div>
       </div>

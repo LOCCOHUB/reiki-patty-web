@@ -4,11 +4,10 @@ import Layout from "./components/Layout";
 import Hero from "./components/Hero";
 import PeopleAtHeart from "./components/PeopleAtHeart";
 import OurApproach from "./components/OurApproach";
-import FeaturedWorks from "./components/FeaturedWorks";
+import ReikiMenu from "./components/ReikiMenu";
 import InspirationBanner from "./components/InspirationBanner";
 import AboutUs from "./components/AboutUs";
 import FooterNav from "./components/FooterNav";
-
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import NotFound from "./components/NotFound";
 
@@ -24,8 +23,8 @@ function App() {
               <Hero />
               <PeopleAtHeart />
               <OurApproach />
-              <FeaturedWorks />
               <InspirationBanner />
+              <ReikiMenu />
               <AboutUs />
               <FooterNav />
             </>

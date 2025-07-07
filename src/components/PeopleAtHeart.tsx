@@ -1,43 +1,49 @@
+import { useState } from "react";
+import ContactForm from "./ContactForm";
+
 const PeopleAtHeart = () => {
-  const handleScrollToServices = () => {
-    const section = document.getElementById('servicios');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const [open, setOpen] = useState(false);
+  const toggleForm = () => setOpen(!open);
 
   return (
-    <section className="bg-background py-24 px-8 md:px-12 lg:px-20">
+    <section id="reiki" className="bg-[#fef9f7] py-24 px-8 md:px-12 lg:px-20">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
             <img
-              src="/images/sections/down-hero.png"
-              alt="Pareja celebrando una boda íntima"
-              className="w-full h-auto"
+              src="/images/sections/presenta-1.png"
+              alt="Sesión de sanación energética"
+              className="w-full h-auto rounded-xl shadow-md"
             />
           </div>
 
           <div className="flex flex-col justify-center">
             <div className="max-w-xl">
-              <p className="text-lg mb-8">
-                En Angelita & Rita diseñamos bodas con alma. Cada pareja tiene su historia, su energía y sus sueños: nosotras los escuchamos y los convertimos en experiencias únicas.
+              <p className="text-lg mb-8 text-gray-800">
+                Öleo Healing Therapy nace como un espacio íntimo de cuidado y reconexión. 
+                Utilizo diferentes técnicas como Reiki, armonización energética y escucha 
+                profunda para acompañarte con presencia.
               </p>
 
-              <p className="text-lg mb-8">
-                Creamos celebraciones donde cada detalle tiene sentido y cada momento se vive con emoción. Nuestra visión es sencilla: hacer que el día más importante de tu vida sea también el más auténtico.
+              <p className="text-lg mb-8 text-gray-800">
+                Cada sesión es distinta, como tú. Lo importante no es “sanar” algo, 
+                sino permitir que tu cuerpo, tu energía y tu alma puedan descansar, 
+                liberar, y recordar quién eres cuando estás en paz.
               </p>
 
               <button
-                onClick={handleScrollToServices}
-                className="inline-block bg-black text-white px-10 py-4 rounded-full text-sm uppercase tracking-wider hover:bg-opacity-90 transition-all"
+                onClick={toggleForm}
+                className="inline-block bg-[#C8B8E0] text-black px-10 py-4 rounded-full text-sm uppercase tracking-wider hover:bg-opacity-90 transition-all"
               >
-                Ver nuestros servicios
+                Reservar una sesión
               </button>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Formulario lateral */}
+      {open && <ContactForm onClose={toggleForm} />}
     </section>
   );
 };

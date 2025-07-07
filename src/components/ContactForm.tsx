@@ -1,292 +1,108 @@
-// src/components/ContactForm.tsx
-import { useState } from 'react';
+import { motion, AnimatePresence } from "framer-motion";
 
 interface ContactFormProps {
   onClose: () => void;
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
-  const [step, setStep] = useState(1);
-  const [success, setSuccess] = useState(false);
-
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    eventType: '',
-    budget: '',
-    date: '',
-    message: ''
-  });
-
-  const [errors, setErrors] = useState({ name: '', email: '' });
-
-  /* ---------- handlers ---------- */
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-
-    if (name === 'name' || name === 'email')
-      setErrors(prev => ({ ...prev, [name]: '' }));
-  };
-
-  const validateFirstStep = () => {
-    const newErrors = { name: '', email: '' };
-    let ok = true;
-
-    if (!formData.name.trim()) {
-      newErrors.name = 'Por favor, introduce tu nombre.';
-      ok = false;
-    }
-    if (!formData.email.trim()) {
-      newErrors.email = 'Por favor, introduce tu email.';
-      ok = false;
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Introduce un email válido.';
-      ok = false;
-    }
-
-    setErrors(newErrors);
-    return ok;
-  };
-
-  const handleNextStep = () => {
-    if (validateFirstStep()) setStep(2);
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      const resp = await fetch('https://formspree.io/f/xjkwkepl', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-
-      if (resp.ok) {
-        setSuccess(true);
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          eventType: '',
-          budget: '',
-          date: '',
-          message: ''
-        });
-        setTimeout(() => {
-          onClose();
-          setSuccess(false);
-          setStep(1);
-        }, 3000);
-      } else alert('Hubo un error al enviar el formulario.');
-    } catch {
-      alert('Error de conexión. Intenta de nuevo.');
-    }
-  };
-
-  /* ---------- render ---------- */
   return (
-    <div className="fixed inset-0 z-50 flex justify-end">
-      <div className="w-full md:w-[550px] h-full overflow-y-auto bg-black text-white animate-slide-in-right">
-        <div className="p-8 md:p-10 flex flex-col h-full">
-
-          {/* ---- Mensaje de éxito ---- */}
-          {success ? (
-            <div className="flex flex-col items-center justify-center h-full text-center">
-              <h2 className="text-2xl mb-4">¡Gracias!</h2>
-              <p className="text-sm">
-                Tu mensaje ha sido enviado. Nos pondremos en contacto muy pronto.
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3 }}
+        className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 10 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+          className="relative w-full max-w-3xl mx-4 md:mx-auto bg-white rounded-xl shadow-xl overflow-hidden flex flex-col max-h-[90vh]"
+        >
+          {/* Header */}
+          <div className="flex justify-between items-start p-6 border-b border-gray-200">
+            <div>
+              <h2 className="text-lg font-semibold uppercase tracking-wide">
+                Reserva tu sesión
+              </h2>
+              <p className="text-sm text-gray-600 mt-1">
+                Sesiones individuales desde <strong>45 €</strong><br />
+                Duración aproximada: 45–60 minutos
               </p>
             </div>
-          ) : (
-            <>
-              {/* ================= PASO 1 ================= */}
-              {step === 1 && (
-                <div className="flex flex-col h-full">
-                  <header className="flex justify-between items-center mb-8">
-                    <h2 className="uppercase text-sm tracking-wider">
-                      Solicitud de Información
-                    </h2>
-                    <button onClick={onClose} className="text-sm hover:opacity-70">
-                      Cerrar
-                    </button>
-                  </header>
 
-                  <p className="mb-8">
-                    Cuéntanos un poco sobre ti. Queremos asegurarnos de que tu día
-                    sea verdaderamente inolvidable.
-                  </p>
+            {/* Botón cerrar grande */}
+            <button
+              onClick={onClose}
+              className="p-2 rounded-full hover:bg-gray-100 transition"
+              aria-label="Cerrar"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="36"
+                height="36"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="black"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          </div>
 
-                  {/* ---- Inputs ---- */}
-                  <div className="border-t border-gray-800 pt-8 space-y-8 flex-1">
-                    <div>
-                      <label className="block text-sm mb-2">
-                        Nombre <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-full p-3 bg-gray-800 focus:ring-white focus:outline-none"
-                      />
-                      {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
-                    </div>
+          {/* Calendario */}
+          <div className="flex-1 overflow-y-auto">
+            <iframe
+              src="https://calendly.com/jorgedf-work/30min?hide_gdpr_banner=1"
+              width="100%"
+              height="100%"
+              style={{ minHeight: '65vh' }}
+              frameBorder="0"
+              scrolling="no"
+              title="Calendario de reservas"
+            />
+          </div>
 
-                    <div>
-                      <label className="block text-sm mb-2">
-                        Correo electrónico <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-full p-3 bg-gray-800 focus:ring-white focus:outline-none"
-                      />
-                      {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
-                    </div>
+          {/* Instrucciones de pago */}
+          <div className="p-6 border-t border-gray-200 text-sm text-gray-700 bg-gray-50">
+            <p className="mb-2">
+              💸 Puedes realizar el pago por <strong>Zelle</strong> antes de tu sesión:
+            </p>
+            <div className="bg-white p-4 rounded shadow-sm text-sm">
+              <p><strong>Nombre:</strong> Patty Sena</p>
+              <p><strong>Correo Zelle:</strong> patyreiki@gmail.com</p>
+              <p className="mt-2 text-xs text-gray-500">
+                *Si necesitas otra forma de pago, consúltanos por WhatsApp tras reservar.
+              </p>
+            </div>
+          </div>
+        </motion.div>
 
-                    <div>
-                      <label className="block text-sm mb-2">Teléfono</label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full p-3 bg-gray-800 focus:ring-white focus:outline-none"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="mt-auto text-right">
-                    <button
-                      type="button"
-                      onClick={handleNextStep}
-                      className="rounded-full bg-white text-black py-3 px-8 text-sm uppercase tracking-wider hover:bg-opacity-90"
-                    >
-                      Siguiente →
-                    </button>
-                  </div>
-                </div>
-              )}
-
-              {/* ================= PASO 2 ================= */}
-              {step === 2 && (
-                <div className="flex flex-col h-full">
-                  <header className="flex justify-between items-center mb-8">
-                    <h2 className="uppercase text-sm tracking-wider">Detalles del Evento</h2>
-                    <button onClick={onClose} className="text-sm hover:opacity-70">
-                      Cerrar
-                    </button>
-                  </header>
-
-                  <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
-                    <div className="border-t border-gray-800 py-6 space-y-8 flex-1">
-                      {/* Tipo de evento */}
-                      <div>
-                        <label htmlFor="eventType" className="block text-sm mb-2">
-                          Tipo de Celebración
-                        </label>
-                        <select
-                          id="eventType"
-                          name="eventType"
-                          value={formData.eventType}
-                          onChange={handleChange}
-                          className="w-full p-3 bg-gray-800 focus:ring-white focus:outline-none"
-                        >
-                          <option value="">Selecciona tipo de evento</option>
-                          <option value="boda">Boda</option>
-                          <option value="boda-destino">Boda de destino</option>
-                          <option value="evento-privado">Evento privado</option>
-                          <option value="otro">Otro</option>
-                        </select>
-                      </div>
-
-                      {/* Presupuesto */}
-                      <div>
-                        <label htmlFor="budget" className="block text-sm mb-2">
-                          Presupuesto Estimado
-                        </label>
-                        <select
-                          id="budget"
-                          name="budget"
-                          value={formData.budget}
-                          onChange={handleChange}
-                          className="w-full p-3 bg-gray-800 focus:ring-white focus:outline-none"
-                        >
-                          <option value="">Selecciona un rango</option>
-                          <option value="menos-1200">Menos de 1 200 €</option>
-                          <option value="1200-2000">1 200 € – 2 000 €</option>
-                          <option value="2000-3000">2 000 € – 3 000 €</option>
-                          <option value="mas-3000">Más de 3 000 €</option>
-                        </select>
-                      </div>
-
-                      {/* Fecha */}
-                      <div>
-                        <label htmlFor="date" className="block text-sm mb-2">
-                          Fecha Estimada del Evento
-                        </label>
-                        <input
-                          type="text"
-                          id="date"
-                          name="date"
-                          placeholder="Mes / Año"
-                          value={formData.date}
-                          onChange={handleChange}
-                          className="w-full p-3 bg-gray-800 focus:ring-white focus:outline-none"
-                        />
-                      </div>
-
-                      {/* Mensaje */}
-                      <div>
-                        <label htmlFor="message" className="block text-sm mb-2">
-                          Cuéntanos más
-                        </label>
-                        <textarea
-                          id="message"
-                          name="message"
-                          rows={5}
-                          value={formData.message}
-                          onChange={handleChange}
-                          className="w-full p-3 bg-gray-800 resize-none focus:ring-white focus:outline-none"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="mt-auto flex justify-between items-center">
-                      <button
-                        type="button"
-                        onClick={() => setStep(1)}
-                        className="hover:underline"
-                      >
-                        ← Atrás
-                      </button>
-                      <button
-                        type="submit"
-                        className="rounded-full bg-white text-black py-3 px-8 text-sm uppercase tracking-wider hover:bg-opacity-90"
-                      >
-                        Enviar
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              )}
-            </>
-          )}
-        </div>
-      </div>
-
-      {/* Clic en overlay = cerrar */}
-      <div
-        className="fixed inset-0 bg-black bg-opacity-50 z-[-1]"
-        onClick={onClose}
-      />
-    </div>
+        {/* WhatsApp flotante */}
+        <a
+          href="https://wa.me/xxxxxxxxxxx" // ← Sustituye por el número real
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-md hover:bg-green-600 transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+          >
+            <path d="M13.601 2.326A7.968 7.968 0 008 .001 7.968 7.968 0 002.399 2.326a7.942 7.942 0 00-1.95 5.252 7.94 7.94 0 001.11 4.08L.001 16l4.36-1.145a7.94 7.94 0 003.64.927 7.968 7.968 0 005.601-2.326 7.942 7.942 0 002.326-5.601 7.942 7.942 0 00-2.326-5.529zM8 14.616c-1.17 0-2.305-.307-3.29-.888l-.235-.138-2.59.68.69-2.526-.152-.248A6.6 6.6 0 011.375 8a6.625 6.625 0 1113.25 0A6.625 6.625 0 018 14.616zm3.342-4.671l-1.011-.496c-.137-.067-.238-.12-.34.12-.098.238-.39.496-.48.596-.087.099-.173.112-.31.037-.138-.068-.583-.215-1.11-.687a4.2 4.2 0 01-.79-.937c-.08-.138-.008-.212.06-.28.061-.06.138-.157.206-.235.07-.078.093-.136.138-.22.046-.085.022-.162-.008-.23l-.496-1.2c-.13-.308-.26-.265-.382-.27h-.326c-.12 0-.23.03-.34.138-.11.11-.45.438-.45 1.07s.462 1.242.526 1.328c.068.085.91 1.389 2.21 1.949.309.133.55.213.737.272.31.099.592.085.816.051.25-.037.76-.31.867-.61.106-.298.106-.555.075-.61-.03-.055-.11-.085-.23-.14z" />
+          </svg>
+        </a>
+      </motion.div>
+    </AnimatePresence>
   );
 };
 

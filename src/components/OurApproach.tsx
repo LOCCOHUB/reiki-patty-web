@@ -6,36 +6,36 @@ const OurApproach = () => {
   const [open, setOpen] = useState(false);
   const toggleForm = () => setOpen(!open);
 
-  const processSteps = [
-    { id: "01", title: "Inspiración y boceto inicial" },
-    { id: "02", title: "Definición del estilo y concepto" },
-    { id: "03", title: "Planificación y organización" },
-    { id: "04", title: "Diseño de espacios y decoración" },
-    { id: "05", title: "Coordinación de proveedores" },
-    { id: "06", title: "Supervisión y ejecución del gran día" },
+  const sessionFlow = [
+    { id: "01", title: "Bienvenida y aterrizaje suave" },
+    { id: "02", title: "Espacio de escucha y respiración" },
+    { id: "03", title: "Imposición de manos y canalización" },
+    { id: "04", title: "Silencio integrador y calma profunda" },
+    { id: "05", title: "Cierre intuitivo y acompañamiento" },
+    { id: "06", title: "Recomendaciones y seguimiento" },
   ];
 
   return (
     <section
-      id="servicios"
-      className="py-24 px-8 md:px-12 lg:px-20 bg-white relative"
+      id="sesiones"
+      className="py-24 px-8 md:px-12 lg:px-20 bg-[#fef9f7] relative"
     >
       <div className="absolute left-8 md:left-12 lg:left-20 top-24 text-sm uppercase tracking-wider text-gray-600">
-        (NUESTRO PROCESO)
+        (UNA SESIÓN CON PATTY)
       </div>
 
       <div className="container mx-auto mt-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
-          {/* Foto + lista */}
+          {/* Imagen + pasos */}
           <div>
             <img
-              src="/images/sections/enfoque-03.png"
-              alt="Organización de boda íntima"
-              className="w-full h-auto object-cover"
+              src="/images/sections/our_1.png"
+              alt="Sesión de reiki en calma"
+              className="w-full h-auto object-cover rounded-xl shadow-md"
             />
 
             <ul className="mt-8 space-y-4">
-              {processSteps.map((step) => (
+              {sessionFlow.map((step) => (
                 <li
                   key={step.id}
                   className="border-t border-gray-200 py-4 flex gap-6"
@@ -57,8 +57,7 @@ const OurApproach = () => {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-12 leading-tight"
               >
-                Nuestro enfoque está diseñado para que disfrutes de cada momento
-                en el camino hacia tu boda soñada.
+                Cada sesión es una invitación a habitar tu cuerpo, tu energía y tu paz.
               </motion.h2>
             </div>
 
@@ -67,20 +66,16 @@ const OurApproach = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-              className="text-xl mb-10"
+              className="text-xl mb-10 text-gray-800"
             >
-              Con nuestro plan de 6 etapas, priorizamos la transparencia, la
-              conexión humana y la fidelidad a tu esencia. Cada paso está
-              pensado para acompañarte, inspirarte y convertir tus ideas en una
-              celebración única e inolvidable.
+              Aunque cada persona es distinta, suelo seguir un flujo de acompañamiento que crea un espacio amoroso, sereno y sin juicio. Todo puede cambiar, pero siempre desde la presencia.
             </motion.p>
 
-            {/* Botón que abre el mismo formulario lateral */}
             <button
               onClick={toggleForm}
-              className="group inline-flex items-center gap-2 bg-black text-white px-10 py-4 rounded-full text-sm uppercase tracking-wider hover:bg-opacity-90 transition-colors"
+              className="group inline-flex items-center gap-2 bg-[#C8B8E0] text-black px-10 py-4 rounded-full text-sm uppercase tracking-wider hover:bg-opacity-90 transition-colors"
             >
-              Conversemos
+              Reservar sesión
               <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>
@@ -89,7 +84,7 @@ const OurApproach = () => {
         </div>
       </div>
 
-      {/* Contact form lateral */}
+      {/* Formulario lateral */}
       {open && <ContactForm onClose={toggleForm} />}
     </section>
   );

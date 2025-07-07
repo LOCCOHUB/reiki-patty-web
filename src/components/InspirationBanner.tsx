@@ -13,9 +13,9 @@ const InspirationBanner = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-5xl md:text-7xl lg:text-9xl font-medium max-w-7xl text-right leading-tight"
           >
-            CELEBRAMOS HISTORIAS<br />
-            QUE DEJAN HUELLA<br />
-            EN EL TIEMPO
+            ABRIMOS ESPACIOS<br />
+            DONDE EL ALMA<br />
+            PUEDE RESPIRAR
           </motion.h2>
         </div>
 
@@ -27,7 +27,9 @@ const InspirationBanner = () => {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
           className="mt-12 text-right text-gray-700 text-base md:text-lg max-w-2xl ml-auto"
         >
-          Creamos experiencias únicas que trascienden el día de la celebración, conectando emociones, memorias y personas para toda la vida.
+          Reiki es una invitación a volver al cuerpo, a la presencia y a la verdad interior.
+          <br />
+          Un encuentro sutil donde lo invisible también importa.
         </motion.p>
       </div>
     </section>

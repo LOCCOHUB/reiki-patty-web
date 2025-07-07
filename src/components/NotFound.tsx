@@ -9,8 +9,8 @@ const NotFound = () => {
         
         <div className="mb-10">
           <p className="max-w-xs md:max-w-sm mb-8 leading-snug text-lg md:text-xl">
-            Por aquí vamos mal...<br />
-            Te llevamos al lugar correcto.
+            Esta energía se ha desviado…<br />
+            Volvamos al camino.
           </p>
 
           <Link
@@ -31,7 +31,7 @@ const NotFound = () => {
       <div className="md:w-5/12 flex items-center justify-center p-4">
         <img
           src="/images/sections/pareja-404.png"
-          alt="Foto rota de pareja"
+          alt="Camino perdido"
           className="w-full h-full object-cover rounded-lg shadow-xl"
         />
       </div>
