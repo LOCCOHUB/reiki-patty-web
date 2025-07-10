@@ -28,8 +28,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
                 Reserva tu sesión
               </h2>
               <p className="text-sm text-gray-600 mt-1">
-                Sesiones individuales desde <strong>45 €</strong><br />
-                Duración aproximada: 45–60 minutos
+                Puedes elegir fecha y hora desde el calendario.<br />
+                Si tienes dudas, escríbenos por WhatsApp.
               </p>
             </div>
 
@@ -59,7 +59,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
           {/* Calendario */}
           <div className="flex-1 overflow-y-auto">
             <iframe
-              src="https://calendly.com/jorgedf-work/30min?hide_gdpr_banner=1"
+              src="https://calendly.com/pattytherapy/30min?hide_gdpr_banner=1"
               width="100%"
               height="100%"
               style={{ minHeight: '65vh' }}
@@ -72,13 +72,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
           {/* Instrucciones de pago */}
           <div className="p-6 border-t border-gray-200 text-sm text-gray-700 bg-gray-50">
             <p className="mb-2">
-              💸 Puedes realizar el pago por <strong>Zelle</strong> antes de tu sesión:
+              💸 El pago se realiza por <strong>Zelle</strong> antes de la sesión:
             </p>
             <div className="bg-white p-4 rounded shadow-sm text-sm">
               <p><strong>Nombre:</strong> Patty Sena</p>
-              <p><strong>Correo Zelle:</strong> patyreiki@gmail.com</p>
+              <p><strong>Teléfono:</strong> (786) 707-6843</p>
               <p className="mt-2 text-xs text-gray-500">
-                *Si necesitas otra forma de pago, consúltanos por WhatsApp tras reservar.
+                *Si necesitas otro método de pago, contáctanos por WhatsApp después de reservar.
               </p>
             </div>
           </div>
@@ -86,7 +86,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
 
         {/* WhatsApp flotante */}
         <a
-          href="https://wa.me/xxxxxxxxxxx" // ← Sustituye por el número real
+          href="https://wa.me/17867076843"  // ← Número real de Patty con prefijo
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-md hover:bg-green-600 transition"

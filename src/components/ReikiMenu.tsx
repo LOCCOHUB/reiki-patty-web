@@ -8,38 +8,40 @@ const ReikiMenu = () => {
 
   const services = [
     {
-      title: "Sesión",
+      title: "Sesión individual en tu espacio",
       description: "Terapia Reiki + espacio para hablar antes/después.",
       duration: "2h aprox.",
-      price: "$85 USD",
+      price: "$110 USD",
     },
     {
       title: "Paquete de 3 sesiones",
-      description:
-        "Tres sesiones de 2h con continuidad terapéutica.",
+      description: "Tres sesiones de 2h con continuidad terapéutica.",
       duration: "6h aprox. total",
-      price: "$230 USD (equivale a $75 por sesión, 12% de descuento)",
+      price: "$295 USD (equivale a 11% de descuento)",
     },
     {
-      title: "Terapia a domicilio",
-      description:
-        "Incluye traslado + adaptación al entorno.",
+      title: "Terapia en casa del cliente (a domicilio)",
+      description: "Incluye traslado + adaptación al entorno.",
       duration: "2h aprox.",
-      price: "$110 USD (puede variar si es más lejos)",
+      price: "$130 USD",
     },
     {
       title: "Armonización energética de hogar",
-      description:
-        "Limpieza energética profunda con símbolos, sonidos y herramientas.",
+      description: "Limpieza energética profunda con símbolos, sonidos y herramientas.",
       duration: "1.5 - 2h",
-      price: "$110 USD (según tamaño del espacio)",
+      price: "$140 USD (según tamaño del espacio)",
     },
     {
-      title: "Sesión especial: Reiki + armonización del hogar",
-      description:
-        "Terapia en el cliente + limpieza del hogar.",
+      title: "Combo especial: Reiki + armonización del hogar",
+      description: "Terapia en el cliente + limpieza del hogar.",
       duration: "3 - 4h total",
-      price: "$190 USD",
+      price: "$230 USD",
+    },
+    {
+      title: "Terapia a distancia",
+      description: "Sesión de Reiki a distancia, con preparación previa y cierre personalizado.",
+      duration: "A consultar",
+      price: "-",
     },
   ];
 

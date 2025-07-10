@@ -13,9 +13,9 @@ const InspirationBanner = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-5xl md:text-7xl lg:text-9xl font-medium max-w-7xl text-right leading-tight"
           >
-            ABRIMOS ESPACIOS<br />
-            DONDE EL ALMA<br />
-            PUEDE RESPIRAR
+            ES TODO TEMPORAL<br />
+            PERO YA VOY<br />
+            AVANZANDO
           </motion.h2>
         </div>
 

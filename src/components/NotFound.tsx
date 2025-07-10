@@ -30,7 +30,7 @@ const NotFound = () => {
       {/* COLUMNA DERECHA */}
       <div className="md:w-5/12 flex items-center justify-center p-4">
         <img
-          src="/images/sections/pareja-404.png"
+          src="/images/sections/error-404-vela.png"
           alt="Camino perdido"
           className="w-full h-full object-cover rounded-lg shadow-xl"
         />

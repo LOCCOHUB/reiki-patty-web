@@ -28,7 +28,7 @@ const Footer = () => {
           {/* Instagram */}
           <div className="md:col-span-2">
             <a
-              href="https://www.instagram.com/reikipatty/"
+              href="https://www.instagram.com/patty_sena/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs uppercase tracking-wider text-gray-600 hover:text-black"
