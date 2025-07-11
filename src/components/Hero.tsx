@@ -42,19 +42,19 @@ const Hero = () => {
       <div className="absolute top-0 left-0 w-full z-20 pt-32 md:pt-40 px-6 sm:px-8 md:px-12 lg:px-20">
         <div className="max-w-5xl mb-6 md:mb-8 animate-fade-in-up">
           <h1 className="text-white text-4xl sm:text-5xl md:text-[80px] leading-tight font-medium mb-4">
-            SANACIÓN<br />
-            QUE RESUENA
+            CONECTA<br />
+            CON TU ESENCIA
           </h1>
           <p className="text-white text-base sm:text-lg md:text-xl max-w-md opacity-90">
-            Öleo Healing Therapy es un espacio terapéutico en Miami donde convergen Reiki, energía, palabra y presencia. Aquí te acompañamos a recuperar tu centro y tu paz interior.
+            Öleo Healing Therapy es un espacio terapéutico en donde convergen Reiki, energía, palabra y presencia. Aquí te acompañamos a recuperar tu centro y tu paz interior.
           </p>
         </div>
 
         {/* H2 solo para móvil */}
         <div className="md:hidden mt-8">
           <h2 className="text-white text-4xl sm:text-5xl font-medium leading-tight">
-            PAZ<br />
-            INTERIOR
+            CONECTA<br />
+            CON TU ESENCIA
           </h2>
         </div>
       </div>
@@ -62,8 +62,8 @@ const Hero = () => {
       {/* H2 lateral solo desktop */}
       <div className="absolute top-1/2 right-12 lg:right-20 z-20 hidden md:block transform -translate-y-1/3 animate-fade-in-left">
         <h2 className="text-white text-5xl sm:text-6xl md:text-[90px] leading-tight font-medium text-right tracking-tight">
-          PAZ<br />
-          INTERIOR
+          ENERGÍA<br />
+          QUE GUÍA
         </h2>
       </div>
 

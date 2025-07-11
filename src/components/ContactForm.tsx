@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface ContactFormProps {
@@ -5,6 +6,17 @@ interface ContactFormProps {
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <AnimatePresence>
       <motion.div
@@ -28,12 +40,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
                 Reserva tu sesión
               </h2>
               <p className="text-sm text-gray-600 mt-1">
-                Puedes elegir fecha y hora desde el calendario.<br />
+                Puedes elegir fecha y hora desde el calendarioss.<br />
                 Si tienes dudas, escríbenos por WhatsApp.
               </p>
             </div>
 
-            {/* Botón cerrar grande */}
             <button
               onClick={onClose}
               className="p-2 rounded-full hover:bg-gray-100 transition"
@@ -56,17 +67,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
             </button>
           </div>
 
-          {/* Calendario */}
-          <div className="flex-1 overflow-y-auto">
-            <iframe
-              src="https://calendly.com/pattytherapy/30min?hide_gdpr_banner=1"
-              width="100%"
-              height="100%"
-              style={{ minHeight: '65vh' }}
-              frameBorder="0"
-              scrolling="no"
-              title="Calendario de reservas"
-            />
+          {/* Calendario Calendly */}
+          <div className="flex-1 overflow-y-auto p-4">
+            <div
+              className="calendly-inline-widget"
+              data-url="https://calendly.com/pattytherapy/30min?hide_gdpr_banner=1"
+              style={{ minWidth: "320px", height: "700px" }}
+            ></div>
           </div>
 
           {/* Instrucciones de pago */}
@@ -86,7 +93,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
 
         {/* WhatsApp flotante */}
         <a
-          href="https://wa.me/17867076843"  // ← Número real de Patty con prefijo
+          href="https://wa.me/17867076843"
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-md hover:bg-green-600 transition"
