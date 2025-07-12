@@ -26,14 +26,14 @@ const ReikiMenu = () => {
       price: "$130 USD",
     },
     {
-      title: "Armonización energética de hogar",
+      title: "Armonización energética",
       description: "Limpieza energética profunda con símbolos, sonidos y herramientas.",
       duration: "1.5 - 2h",
       price: "$140 USD (según tamaño del espacio)",
     },
     {
-      title: "Combo especial: Reiki + armonización del hogar",
-      description: "Terapia en el cliente + limpieza del hogar.",
+      title: "Especial: Reiki + armonización de ty espacio",
+      description: "Terapia en el lugar + limpieza del hogar.",
       duration: "3 - 4h total",
       price: "$230 USD",
     },
