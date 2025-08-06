@@ -59,14 +59,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* H2 lateral solo desktop */}
-      <div className="absolute top-1/2 right-12 lg:right-20 z-20 hidden md:block transform -translate-y-1/3 animate-fade-in-left">
-        <h2 className="text-white text-5xl sm:text-6xl md:text-[90px] leading-tight font-medium text-right tracking-tight">
-          ENERGÍA<br />
-          QUE GUÍA
-        </h2>
-      </div>
-
       {/* Flecha scroll */}
       <div className="absolute bottom-10 w-full z-20 flex justify-center items-center flex-col">
         <span className="text-white text-sm uppercase tracking-wider mb-2">
