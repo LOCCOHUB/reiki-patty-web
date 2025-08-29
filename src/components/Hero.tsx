@@ -49,14 +49,6 @@ const Hero = () => {
             Öleo Healing Therapy es un espacio terapéutico en donde convergen Reiki, energía, palabra y presencia. Aquí te acompañamos a recuperar tu centro y tu paz interior.
           </p>
         </div>
-
-        {/* H2 solo para móvil */}
-        <div className="md:hidden mt-8">
-          <h2 className="text-white text-4xl sm:text-5xl font-medium leading-tight">
-            CONECTA<br />
-            CON TU ESENCIA
-          </h2>
-        </div>
       </div>
 
       {/* Flecha scroll */}
