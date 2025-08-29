@@ -122,7 +122,7 @@ const Header = () => {
             <div className="mt-auto">
               <div className="text-xl mb-2">
                 <a
-                  href="https://instagram.com/amarureiki"
+                  href="https://www.instagram.com/patty_sena/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:opacity-70"
@@ -130,7 +130,7 @@ const Header = () => {
                   <span className="block text-sm uppercase tracking-wider mb-2">
                     Instagram
                   </span>
-                  @amarureikiss
+                  @pattysenareiki
                 </a>
               </div>
             </div>
