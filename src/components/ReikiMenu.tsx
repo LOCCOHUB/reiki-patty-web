@@ -8,7 +8,7 @@ const ReikiMenu = () => {
 
   const services = [
     {
-      title: "Sesión individual en tu espacio",
+      title: "Sesión individual",
       description: "Terapia Reiki + espacio para hablar antes/después.",
       duration: "2h aprox.",
       price: "$110 USD",
@@ -20,19 +20,19 @@ const ReikiMenu = () => {
       price: "$295 USD (equivale a 11% de descuento)",
     },
     {
-      title: "Terapia en casa del cliente (a domicilio)",
+      title: "Terapia a domicilio",
       description: "Incluye traslado + adaptación al entorno.",
       duration: "2h aprox.",
       price: "$130 USD",
     },
     {
-      title: "Armonización energética",
+      title: "Armonización energética de un lugar",
       description: "Limpieza energética profunda con símbolos, sonidos y herramientas.",
       duration: "1.5 - 2h",
       price: "$140 USD (según tamaño del espacio)",
     },
     {
-      title: "Especial: Reiki + armonización de ty espacio",
+      title: "Especial: Reiki + armonización de tu espacio",
       description: "Terapia en el lugar + limpieza del hogar.",
       duration: "3 - 4h total",
       price: "$230 USD",
