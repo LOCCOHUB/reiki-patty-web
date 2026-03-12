@@ -11,7 +11,7 @@ import FooterNav from "./components/FooterNav";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import NotFound from "./components/NotFound";
 
-const SHOW_HOLDING_SCREEN = true;
+const SHOW_HOLDING_SCREEN = false;
 
 function HoldingScreen() {
   return (
