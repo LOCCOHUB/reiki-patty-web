@@ -11,7 +11,23 @@ import FooterNav from "./components/FooterNav";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import NotFound from "./components/NotFound";
 
+const SHOW_HOLDING_SCREEN = true;
+
+function HoldingScreen() {
+  return (
+    <main className="flex min-h-screen items-center justify-center bg-white px-6 text-center text-black">
+      <h1 className="text-[clamp(3rem,10vw,5.5rem)] font-normal tracking-[-0.06em]">
+        Buena vida
+      </h1>
+    </main>
+  );
+}
+
 function App() {
+  if (SHOW_HOLDING_SCREEN) {
+    return <HoldingScreen />;
+  }
+
   return (
     <Routes>
       {/* Rutas que SÍ llevan Header + Footer */}
